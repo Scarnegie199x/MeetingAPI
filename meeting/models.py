@@ -6,9 +6,9 @@ from django.contrib.auth import get_user_model
 
 class Meeting(models.Model):
     title = models.CharField(max_length=255)
-    #created_by = models.ForeignKey(get_user_model(),
-                                #on_delete=models.CASCADE,
-                                #)
+    created_by = models.ForeignKey(get_user_model(),
+                                on_delete=models.CASCADE,
+                                )
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -27,7 +27,7 @@ class Topic(models.Model):
                               on_delete=models.CASCADE,
                               related_name="Meeting",
                               )
-    #attachments = FileField(upload_to='uploads/%Y/%m/%d/')
+    attachments = models.FileField(upload_to='uploads/%Y/%m/%d/',blank=True, null=True)
 
     def __str__(self):
         return self.title[:50]
