@@ -11,4 +11,4 @@ class MeetingSerializer(serializers.ModelSerializer):
 class TopicSerializer(serializers.ModelSerializer):
     class Meta:
         model = Topic
-        fields = ("title","created_by","created_at","updated_at","problem","resolution","meeting")
+        fields = ("title","created_at","updated_at","problem","resolution","meeting")

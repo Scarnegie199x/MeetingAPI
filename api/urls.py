@@ -1,7 +1,8 @@
 from django.urls import path
 
-from .views import MeetingAPIView
+from .views import MeetingAPIView,TopicAPIView
 
 urlpatterns = [
-    path("", MeetingAPIView.as_view(), name = "meeting_list"),
+    path("meeting/", MeetingAPIView.as_view(), name = "meeting_list"),
+    path("topic/", TopicAPIView.as_view(), name = "meeting_list"),
 ]
